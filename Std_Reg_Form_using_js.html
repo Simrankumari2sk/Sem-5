@@ -1,0 +1,21 @@
+<form id="studentForm">
+  <input type="text" id="name" placeholder="Name" required />
+  <input type="email" id="email" placeholder="Email" required />
+  <input type="number" id="age" placeholder="Age" required />
+  <button type="submit">Register</button>
+</form>
+
+<script>
+document.getElementById("studentForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const age = parseInt(document.getElementById("age").value);
+
+  if (!name || !email || isNaN(age) || age < 5 || age > 100) {
+    alert("Please enter valid details.");
+  } else {
+    alert("Registration successful!");
+  }
+});
+</script>
